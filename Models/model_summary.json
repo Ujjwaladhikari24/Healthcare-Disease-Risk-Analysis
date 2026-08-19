@@ -1,0 +1,96 @@
+{
+    "project": "Healthcare Disease Risk Analysis",
+    "description": "Multi-disease healthcare risk analysis using machine learning.",
+    "models": {
+        "diabetes": {
+            "name": "Diabetes Risk Model",
+            "features": [
+                "HighBP",
+                "HighChol",
+                "CholCheck",
+                "BMI",
+                "Smoker",
+                "Stroke",
+                "HeartDiseaseorAttack",
+                "PhysActivity",
+                "Fruits",
+                "Veggies",
+                "HvyAlcoholConsump",
+                "AnyHealthcare",
+                "NoDocbcCost",
+                "GenHlth",
+                "MentHlth",
+                "PhysHlth",
+                "DiffWalk",
+                "Sex",
+                "Age",
+                "Education",
+                "Income"
+            ],
+            "metrics": {
+                "accuracy": 79.03,
+                "precision": 81.6,
+                "recall": 79.03,
+                "f1_score": 79.98
+            },
+            "classes": [
+                "0",
+                "1",
+                "2"
+            ]
+        },
+        "heart_disease": {
+            "name": "Heart Disease Risk Model",
+            "features": [
+                "age",
+                "sex",
+                "cp",
+                "trestbps",
+                "chol",
+                "fbs",
+                "restecg",
+                "thalach",
+                "exang",
+                "oldpeak",
+                "slope",
+                "ca",
+                "thal"
+            ],
+            "metrics": {
+                "accuracy": 90.16,
+                "precision": 90.96,
+                "recall": 90.16,
+                "f1_score": 90.17
+            },
+            "classes": [
+                "0",
+                "1"
+            ]
+        },
+        "stroke": {
+            "name": "Stroke Risk Model",
+            "features": [
+                "gender",
+                "age",
+                "hypertension",
+                "heart_disease",
+                "ever_married",
+                "work_type",
+                "Residence_type",
+                "avg_glucose_level",
+                "bmi",
+                "smoking_status"
+            ],
+            "metrics": {
+                "accuracy": 93.54,
+                "precision": 91.95,
+                "recall": 93.54,
+                "f1_score": 92.67
+            },
+            "classes": [
+                "0",
+                "1"
+            ]
+        }
+    }
+}

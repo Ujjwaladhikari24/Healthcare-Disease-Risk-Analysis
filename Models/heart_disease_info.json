@@ -1,0 +1,28 @@
+{
+    "name": "Heart Disease Risk Model",
+    "features": [
+        "age",
+        "sex",
+        "cp",
+        "trestbps",
+        "chol",
+        "fbs",
+        "restecg",
+        "thalach",
+        "exang",
+        "oldpeak",
+        "slope",
+        "ca",
+        "thal"
+    ],
+    "metrics": {
+        "accuracy": 90.16,
+        "precision": 90.96,
+        "recall": 90.16,
+        "f1_score": 90.17
+    },
+    "classes": [
+        "0",
+        "1"
+    ]
+}

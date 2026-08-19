@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Healthcare Disease Risk Analysis
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        HealthRisk AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Prediction
+        </a>
+
+        <a href="/dashboard">
+            Analytics
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="page">
+
+
+<section class="hero">
+
+    <div class="badge">
+        HEALTHCARE RISK ANALYSIS
+    </div>
+
+    <h1>
+        Multi-Disease Risk Assessment
+    </h1>
+
+    <p>
+        Analyze patient health and lifestyle information
+        using machine learning models for diabetes,
+        heart disease, and stroke risk assessment.
+    </p>
+
+</section>
+
+
+<section class="card">
+
+
+<h2>
+    Patient Risk Assessment
+</h2>
+
+<p class="form-description">
+    Select a disease and enter the available patient
+    information. Optional fields can be left empty.
+</p>
+
+
+<form
+    action="/predict"
+    method="POST"
+>
+
+
+<div class="form-group">
+
+    <label for="disease">
+        Select Disease
+    </label>
+
+    <select
+        id="disease"
+        name="disease"
+        onchange="showDiseaseForm()"
+        required
+    >
+
+        <option value="">
+            Select disease
+        </option>
+
+        <option value="diabetes">
+            Diabetes
+        </option>
+
+        <option value="heart">
+            Heart Disease
+        </option>
+
+        <option value="stroke">
+            Stroke
+        </option>
+
+    </select>
+
+</div>
+
+
+<!-- ======================================================
+     DIABETES FORM
+====================================================== -->
+
+<div
+    id="diabetes-form"
+    class="disease-form"
+    style="display: none;"
+>
+
+
+<h3>
+    Diabetes Risk Assessment
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+    High Blood Pressure
+</label>
+
+<select name="HighBP">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    High Cholesterol
+</label>
+
+<select name="HighChol">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Cholesterol Check
+</label>
+
+<select name="CholCheck">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    BMI
+</label>
+
+<input
+    type="number"
+    name="BMI"
+    step="0.1"
+    min="0"
+    placeholder="Example: 25"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Smoker
+</label>
+
+<select name="Smoker">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Stroke History
+</label>
+
+<select name="Stroke">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Heart Disease / Heart Attack
+</label>
+
+<select name="HeartDiseaseorAttack">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Physical Activity
+</label>
+
+<select name="PhysActivity">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Fruits Consumption
+</label>
+
+<select name="Fruits">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Vegetables Consumption
+</label>
+
+<select name="Veggies">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Heavy Alcohol Consumption
+</label>
+
+<select name="HvyAlcoholConsump">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    General Health
+</label>
+
+<input
+    type="number"
+    name="GenHlth"
+    min="1"
+    max="5"
+    placeholder="1 - 5"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Mental Health Days
+</label>
+
+<input
+    type="number"
+    name="MentHlth"
+    min="0"
+    max="30"
+    placeholder="0 - 30"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Physical Health Days
+</label>
+
+<input
+    type="number"
+    name="PhysHlth"
+    min="0"
+    max="30"
+    placeholder="0 - 30"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Difficulty Walking
+</label>
+
+<select name="DiffWalk">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Age Category
+</label>
+
+<input
+    type="number"
+    name="Age"
+    min="1"
+    max="100"
+    placeholder="Age"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Education Level
+</label>
+
+<input
+    type="number"
+    name="Education"
+    min="1"
+    max="6"
+    placeholder="1 - 6"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Income Category
+</label>
+
+<input
+    type="number"
+    name="Income"
+    min="1"
+    max="8"
+    placeholder="1 - 8"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     HEART DISEASE FORM
+====================================================== -->
+
+<div
+    id="heart-form"
+    class="disease-form"
+    style="display: none;"
+>
+
+
+<h3>
+    Heart Disease Risk Assessment
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+    Age
+</label>
+
+<input
+    type="number"
+    name="age"
+    min="1"
+    max="120"
+    placeholder="Age"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Sex
+</label>
+
+<select name="sex">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    Female
+</option>
+
+<option value="1">
+    Male
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Chest Pain Type
+</label>
+
+<input
+    type="number"
+    name="cp"
+    min="0"
+    max="3"
+    placeholder="0 - 3"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Resting Blood Pressure
+</label>
+
+<input
+    type="number"
+    name="trestbps"
+    min="50"
+    max="250"
+    placeholder="mmHg"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Cholesterol
+</label>
+
+<input
+    type="number"
+    name="chol"
+    min="50"
+    max="700"
+    placeholder="mg/dL"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Fasting Blood Sugar
+</label>
+
+<select name="fbs">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    Normal
+</option>
+
+<option value="1">
+    High
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Resting ECG
+</label>
+
+<input
+    type="number"
+    name="restecg"
+    min="0"
+    max="2"
+    placeholder="0 - 2"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Maximum Heart Rate
+</label>
+
+<input
+    type="number"
+    name="thalach"
+    min="50"
+    max="250"
+    placeholder="BPM"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Exercise Induced Angina
+</label>
+
+<select name="exang">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    ST Depression
+</label>
+
+<input
+    type="number"
+    name="oldpeak"
+    min="0"
+    max="10"
+    step="0.1"
+    placeholder="Example: 1.0"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    ST Slope
+</label>
+
+<input
+    type="number"
+    name="slope"
+    min="0"
+    max="2"
+    placeholder="0 - 2"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Number of Major Vessels
+</label>
+
+<input
+    type="number"
+    name="ca"
+    min="0"
+    max="4"
+    placeholder="0 - 4"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Thalassemia
+</label>
+
+<input
+    type="number"
+    name="thal"
+    min="0"
+    max="3"
+    placeholder="0 - 3"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     STROKE FORM
+====================================================== -->
+
+<div
+    id="stroke-form"
+    class="disease-form"
+    style="display: none;"
+>
+
+
+<h3>
+    Stroke Risk Assessment
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+    Gender
+</label>
+
+<select name="gender">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="Male">
+    Male
+</option>
+
+<option value="Female">
+    Female
+</option>
+
+<option value="Other">
+    Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Age
+</label>
+
+<input
+    type="number"
+    name="age"
+    min="0"
+    max="120"
+    placeholder="Age"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Hypertension
+</label>
+
+<select name="hypertension">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Heart Disease
+</label>
+
+<select name="heart_disease">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="0">
+    No
+</option>
+
+<option value="1">
+    Yes
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Ever Married
+</label>
+
+<select name="ever_married">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="Yes">
+    Yes
+</option>
+
+<option value="No">
+    No
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Work Type
+</label>
+
+<select name="work_type">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="Private">
+    Private
+</option>
+
+<option value="Self-employed">
+    Self-employed
+</option>
+
+<option value="Govt_job">
+    Government Job
+</option>
+
+<option value="children">
+    Children
+</option>
+
+<option value="Never_worked">
+    Never Worked
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Residence Type
+</label>
+
+<select name="Residence_type">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="Urban">
+    Urban
+</option>
+
+<option value="Rural">
+    Rural
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Average Glucose Level
+</label>
+
+<input
+    type="number"
+    name="avg_glucose_level"
+    min="0"
+    step="0.1"
+    placeholder="Example: 100"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    BMI
+</label>
+
+<input
+    type="number"
+    name="bmi"
+    min="0"
+    step="0.1"
+    placeholder="Example: 25"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Smoking Status
+</label>
+
+<select name="smoking_status">
+
+<option value="">
+    Not specified
+</option>
+
+<option value="never smoked">
+    Never Smoked
+</option>
+
+<option value="formerly smoked">
+    Formerly Smoked
+</option>
+
+<option value="smokes">
+    Smokes
+</option>
+
+<option value="Unknown">
+    Unknown
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="form-actions">
+
+<button
+    type="submit"
+    class="primary-button"
+>
+    Calculate Disease Risk
+</button>
+
+</div>
+
+
+</form>
+
+
+</section>
+
+
+<section class="card information-card">
+
+<h2>
+    Supported Risk Assessments
+</h2>
+
+
+<div class="feature-grid">
+
+
+<div class="feature">
+
+<h3>
+    Diabetes
+</h3>
+
+<p>
+    Uses patient health indicators and lifestyle
+    factors to estimate diabetes-related risk.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>
+    Heart Disease
+</h3>
+
+<p>
+    Uses cardiovascular health measurements and
+    clinical indicators to estimate heart disease risk.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>
+    Stroke
+</h3>
+
+<p>
+    Uses demographic, health, and lifestyle factors
+    to estimate stroke risk.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="card disclaimer">
+
+<h3>
+    Important Notice
+</h3>
+
+<p>
+    This system is an educational data science project.
+    Predictions are generated by machine learning models
+    and are not medical diagnoses. Always consult a
+    qualified healthcare professional for medical advice.
+</p>
+
+</section>
+
+
+</main>
+
+
+<script>
+
+function showDiseaseForm() {
+
+    const disease =
+        document.getElementById(
+            "disease"
+        ).value;
+
+
+    const forms = [
+        "diabetes-form",
+        "heart-form",
+        "stroke-form"
+    ];
+
+
+    forms.forEach(
+        function(formId) {
+
+            document.getElementById(
+                formId
+            ).style.display = "none";
+
+        }
+    );
+
+
+    if (disease === "diabetes") {
+
+        document.getElementById(
+            "diabetes-form"
+        ).style.display = "block";
+
+    }
+
+
+    if (disease === "heart") {
+
+        document.getElementById(
+            "heart-form"
+        ).style.display = "block";
+
+    }
+
+
+    if (disease === "stroke") {
+
+        document.getElementById(
+            "stroke-form"
+        ).style.display = "block";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

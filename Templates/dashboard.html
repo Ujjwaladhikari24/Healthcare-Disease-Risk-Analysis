@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Healthcare Analytics Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        HealthRisk AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Prediction
+        </a>
+
+        <a href="/dashboard">
+            Analytics
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="page">
+
+
+<section class="hero">
+
+    <div class="badge">
+        DATA ANALYTICS
+    </div>
+
+    <h1>
+        Healthcare Analytics Dashboard
+    </h1>
+
+    <p>
+        Analytical overview of the machine learning models
+        used for disease risk assessment.
+    </p>
+
+</section>
+
+
+<section class="dashboard-grid">
+
+
+<div class="card dashboard-card">
+
+    <div class="dashboard-icon">
+        Diabetes
+    </div>
+
+    <h2>
+        Diabetes Risk Model
+    </h2>
+
+    <p>
+        Patient health indicators and lifestyle factors
+        are analyzed to estimate diabetes-related risk.
+    </p>
+
+    <div class="metric-list">
+
+        <div class="metric">
+
+            <span>
+                Model Status
+            </span>
+
+            <strong>
+                Available
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Analysis Type
+            </span>
+
+            <strong>
+                Classification
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Data Processing
+            </span>
+
+            <strong>
+                Preprocessed
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card dashboard-card">
+
+    <div class="dashboard-icon">
+        Heart
+    </div>
+
+    <h2>
+        Heart Disease Risk Model
+    </h2>
+
+    <p>
+        Cardiovascular measurements and clinical indicators
+        are used to estimate heart disease risk.
+    </p>
+
+    <div class="metric-list">
+
+        <div class="metric">
+
+            <span>
+                Model Status
+            </span>
+
+            <strong>
+                Available
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Analysis Type
+            </span>
+
+            <strong>
+                Classification
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Data Processing
+            </span>
+
+            <strong>
+                Preprocessed
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card dashboard-card">
+
+    <div class="dashboard-icon">
+        Stroke
+    </div>
+
+    <h2>
+        Stroke Risk Model
+    </h2>
+
+    <p>
+        Demographic, medical, and lifestyle information
+        is analyzed to estimate stroke risk.
+    </p>
+
+    <div class="metric-list">
+
+        <div class="metric">
+
+            <span>
+                Model Status
+            </span>
+
+            <strong>
+                Available
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Analysis Type
+            </span>
+
+            <strong>
+                Classification
+            </strong>
+
+        </div>
+
+        <div class="metric">
+
+            <span>
+                Data Processing
+            </span>
+
+            <strong>
+                Preprocessed
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<section class="card">
+
+
+<h2>
+    Project Analysis
+</h2>
+
+
+<div class="analysis-grid">
+
+
+<div class="analysis-item">
+
+    <h3>
+        Patient Data Analysis
+    </h3>
+
+    <p>
+        Patient records are processed using Pandas and
+        NumPy before being passed to the machine learning
+        models.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Data Preprocessing
+    </h3>
+
+    <p>
+        Missing values, numerical variables, categorical
+        variables, and model input features are prepared
+        before prediction.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Classification
+    </h3>
+
+    <p>
+        Scikit-learn classification models are used to
+        determine the predicted disease-risk category.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Risk Score Generation
+    </h3>
+
+    <p>
+        Prediction probabilities are converted into an
+        easy-to-understand risk score from 0 to 100.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Feature Engineering
+    </h3>
+
+    <p>
+        Relevant health and lifestyle variables are
+        prepared as model features for disease prediction.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Statistical Analysis
+    </h3>
+
+    <p>
+        Dataset distributions, model performance, and
+        prediction probabilities are analyzed to generate
+        useful analytical insights.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Data Visualization
+    </h3>
+
+    <p>
+        Matplotlib and Seaborn are used to create
+        distributions, feature importance, and
+        classification visualizations.
+    </p>
+
+</div>
+
+
+<div class="analysis-item">
+
+    <h3>
+        Model Evaluation
+    </h3>
+
+    <p>
+        Classification models are evaluated using
+        appropriate performance metrics and confusion
+        matrices.
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+
+<h2>
+    Technology Stack
+</h2>
+
+
+<div class="technology-grid">
+
+    <span class="technology">
+        Python
+    </span>
+
+    <span class="technology">
+        Pandas
+    </span>
+
+    <span class="technology">
+        NumPy
+    </span>
+
+    <span class="technology">
+        Scikit-learn
+    </span>
+
+    <span class="technology">
+        Jupyter Notebook
+    </span>
+
+    <span class="technology">
+        Matplotlib
+    </span>
+
+    <span class="technology">
+        Seaborn
+    </span>
+
+    <span class="technology">
+        Flask
+    </span>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+
+<h2>
+    Generated Analytical Visualizations
+</h2>
+
+
+<div class="image-grid">
+
+
+<div class="visualization">
+
+    <img
+        src="{{ url_for('static', filename='diabetes_distribution.png') }}"
+        alt="Diabetes distribution"
+    >
+
+    <p>
+        Diabetes Data Distribution
+    </p>
+
+</div>
+
+
+<div class="visualization">
+
+    <img
+        src="{{ url_for('static', filename='confusion_matrix.png') }}"
+        alt="Classification confusion matrix"
+    >
+
+    <p>
+        Classification Confusion Matrix
+    </p>
+
+</div>
+
+
+<div class="visualization">
+
+    <img
+        src="{{ url_for('static', filename='feature_importance.png') }}"
+        alt="Feature importance"
+    >
+
+    <p>
+        Feature Importance Analysis
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="card disclaimer">
+
+    <h3>
+        Important Notice
+    </h3>
+
+    <p>
+        This dashboard is part of an academic data science
+        project. The displayed predictions and analytical
+        results are generated by machine learning models and
+        must not be interpreted as medical diagnoses.
+    </p>
+
+</section>
+
+
+<div class="result-actions">
+
+    <a
+        href="/"
+        class="primary-button button-link"
+    >
+        New Risk Assessment
+    </a>
+
+</div>
+
+
+</main>
+
+
+</body>
+
+</html>

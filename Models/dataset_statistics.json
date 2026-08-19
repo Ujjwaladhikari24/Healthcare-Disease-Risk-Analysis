@@ -1,0 +1,14 @@
+{
+    "heart_disease": {
+        "records": 303,
+        "features": 13,
+        "disease_cases": 139,
+        "no_disease_cases": 164
+    },
+    "stroke": {
+        "records": 5110,
+        "features": 10,
+        "stroke_cases": 249,
+        "no_stroke_cases": 4861
+    }
+}

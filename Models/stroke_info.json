@@ -1,0 +1,25 @@
+{
+    "name": "Stroke Risk Model",
+    "features": [
+        "gender",
+        "age",
+        "hypertension",
+        "heart_disease",
+        "ever_married",
+        "work_type",
+        "Residence_type",
+        "avg_glucose_level",
+        "bmi",
+        "smoking_status"
+    ],
+    "metrics": {
+        "accuracy": 93.54,
+        "precision": 91.95,
+        "recall": 93.54,
+        "f1_score": 92.67
+    },
+    "classes": [
+        "0",
+        "1"
+    ]
+}
